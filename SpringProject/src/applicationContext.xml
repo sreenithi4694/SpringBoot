@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<bean name="bubbleSort" class="com.springexample.sort.BubbleSort"/>
+<bean name="quickSort" class="com.springexample.sort.QuickSort"/>
+
+<bean name="bubbleSortBinarySearchImpl" class="com.springexample.bSearch.BinarySearchImpl">
+      <property name ="sortingImpl" ref="bubbleSort"/>
+</bean>
+
+<bean name="quickSortBinarySearchImpl" class="com.springexample.bSearch.BinarySearchImpl">
+      <property name ="sortingImpl" ref="quickSort"/>
+</bean>
+
+<bean name="searchApp" class="com.springexample.bSearch.SpringSearchApp">
+    <property name="bubbleSortSearchImpl" ref="bubbleSortBinarySearchImpl"/>
+    <property name="quickSortSearchImpl" ref="quickSortBinarySearchImpl"/>
+</bean>
+</beans>
