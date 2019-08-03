@@ -5,7 +5,7 @@ import com.example.sort.Sort;
 
 public class BinarySearchImpl {
     Sort sortingImpl=null;
-
+ 
 	public void setSortingImpl(Sort sortingImpl) {
 		this.sortingImpl = sortingImpl;
 	}
